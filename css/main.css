@@ -1,0 +1,224 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #f1f5f9;
+    min-height: 100vh;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  /* ===== DARK / LIGHT MODE ===== */
+  body.light-mode {
+    background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+    color: #0f172a;
+  }
+  
+  /* ===== HEADER ===== */
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .app-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+  }
+  
+  #themeToggle {
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    color: inherit;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+  }
+  
+  #themeToggle:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ===== GLASS CARD BASE ===== */
+  .stat-card,
+  .form-section,
+  .control-panel,
+  .list-section {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  
+  body.light-mode .stat-card,
+  body.light-mode .form-section,
+  body.light-mode .control-panel,
+  body.light-mode .list-section {
+    background: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* ===== STATS ===== */
+  .stats-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-card h3 {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  
+  .stat-card p {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  
+  /* XP BAR */
+  .xp-bar {
+    grid-column: 1 / -1;
+    background: rgba(255,255,255,0.1);
+    height: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  #xpProgress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    transition: width 0.4s ease;
+  }
+  
+  /* ===== FORM ===== */
+  form {
+    display: grid;
+    gap: 12px;
+  }
+  
+  input,
+  select,
+  textarea {
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: inherit;
+    transition: 0.2s;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    background: rgba(255,255,255,0.2);
+  }
+  
+  button {
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+  
+  #submitBtn {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    color: white;
+  }
+  
+  #submitBtn:hover {
+    transform: translateY(-2px);
+  }
+  
+  #cancelEdit {
+    background: #ef4444;
+    color: white;
+  }
+  
+  /* ===== CONTROL PANEL ===== */
+  .control-panel {
+    display: grid;
+    gap: 10px;
+  }
+  
+  /* ===== LIST ===== */
+  #mufradatList {
+    display: grid;
+    gap: 15px;
+  }
+  
+  .mufradat-card {
+    padding: 15px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .mufradat-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .mufradat-card h2 {
+    font-size: 22px;
+    direction: rtl;
+  }
+  
+  .mufradat-card .meaning {
+    font-weight: 600;
+    margin: 5px 0;
+  }
+  
+  .card-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+  }
+  
+  .card-actions button {
+    flex: 1;
+    font-size: 12px;
+    padding: 6px;
+  }
+  
+  .edit-btn {
+    background: #3b82f6;
+    color: white;
+  }
+  
+  .delete-btn {
+    background: #ef4444;
+    color: white;
+  }
+  
+  .favorite-btn {
+    background: #facc15;
+    color: black;
+  }
+  
+  /* ===== EMPTY STATE ===== */
+  #emptyState {
+    text-align: center;
+    opacity: 0.7;
+    margin-top: 30px;
+  }
+  

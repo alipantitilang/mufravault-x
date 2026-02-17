@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MufraVault X</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header">
+    <h1> MufraVault X</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <!-- ===== STATS PANEL ===== -->
+  <section class="stats-panel">
+    <div class="stat-card">
+      <h3>Total Kata</h3>
+      <p id="totalWords">0</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Favorit</h3>
+      <p id="totalFavorites">0</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Level</h3>
+      <p id="userLevel">1</p>
+    </div>
+
+    <div class="xp-bar">
+      <div id="xpProgress"></div>
+    </div>
+  </section>
+
+  <!-- ===== FORM INPUT ===== -->
+  <section class="form-section">
+    <h2>Tambah / Edit Mufradat</h2>
+
+    <form id="mufradatForm">
+      <input type="hidden" id="wordId" />
+
+      <input type="text" id="arabic" placeholder="Kata Arab" required />
+      <input type="text" id="latin" placeholder="Latin" required />
+      <input type="text" id="meaning" placeholder="Arti" required />
+
+      <select id="category">
+        <option value="Isim">Isim</option>
+        <option value="Fi'il">Fi'il</option>
+        <option value="Huruf">Huruf</option>
+      </select>
+
+      <select id="level">
+        <option value="Basic">Basic</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+
+      <textarea id="example" placeholder="Contoh kalimat"></textarea>
+
+      <button type="submit" id="submitBtn">Tambah</button>
+      <button type="button" id="cancelEdit" style="display:none;">Batal Edit</button>
+    </form>
+  </section>
+
+  <!-- ===== SEARCH & FILTER ===== -->
+  <section class="control-panel">
+
+    <input type="text" id="searchInput" placeholder="Cari kata..." />
+
+    <select id="filterCategory">
+      <option value="all">Semua Kategori</option>
+      <option value="Isim">Isim</option>
+      <option value="Fi'il">Fi'il</option>
+      <option value="Huruf">Huruf</option>
+    </select>
+
+    <select id="sortOption">
+      <option value="newest">Terbaru</option>
+      <option value="az">A-Z</option>
+      <option value="level">Level</option>
+    </select>
+
+    <button id="exportBtn">Export</button>
+    <input type="file" id="importFile" hidden />
+    <button id="importBtn">Import</button>
+
+  </section>
+
+  <!-- ===== LIST DISPLAY ===== -->
+  <section class="list-section">
+    <div id="mufradatList"></div>
+  </section>
+
+  <!-- ===== EMPTY STATE ===== -->
+  <section id="emptyState" style="display:none;">
+    <p>Belum ada mufradat. Mulai tambahkan ✨</p>
+  </section>
+
+  <!-- ===== JS MODULES ===== -->
+  <script src="js/data.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/sort.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker Registered"))
+        .catch(err => console.log("SW Error:", err));
+    }
+  </script>
+</body>
+</html>

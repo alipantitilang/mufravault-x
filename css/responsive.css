@@ -1,0 +1,246 @@
+/* ===============================
+   RESPONSIVE SYSTEM - MUFRAVAULT X
+================================= */
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+
+    body {
+      padding: 15px;
+    }
+  
+    .app-header h1 {
+      font-size: 22px;
+    }
+  
+    .stats-panel {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+  
+    .stat-card p {
+      font-size: 18px;
+    }
+  
+    .mufradat-card h2 {
+      font-size: 20px;
+    }
+  }
+  
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+  
+    body {
+      padding: 12px;
+    }
+  
+    .app-header {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  
+    .stats-panel {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .xp-bar {
+      grid-column: span 2;
+    }
+  
+    form {
+      gap: 10px;
+    }
+  
+    input,
+    select,
+    textarea,
+    button {
+      font-size: 14px;
+    }
+  
+    .control-panel {
+      grid-template-columns: 1fr;
+    }
+  
+    .mufradat-card {
+      padding: 12px;
+    }
+  
+    .card-actions {
+      flex-direction: column;
+    }
+  
+    .card-actions button {
+      width: 100%;
+    }
+  }
+  
+  /* ===== SMALL PHONE ===== */
+  @media (max-width: 480px) {
+  
+    .stats-panel {
+      grid-template-columns: 1fr;
+    }
+  
+    .xp-bar {
+      grid-column: span 1;
+    }
+  
+    .app-header h1 {
+      font-size: 18px;
+    }
+  
+    .stat-card p {
+      font-size: 16px;
+    }
+  
+    .mufradat-card h2 {
+      font-size: 18px;
+    }
+  
+    #themeToggle {
+      width: 100%;/* ============================= */
+      /* ===== RESPONSIVE SYSTEM ===== */
+      /* ============================= */
+      
+      /* ===== EXTRA SMALL DEVICES (≤ 480px) ===== */
+      @media (max-width: 480px) {
+      
+        body {
+          padding: 12px;
+        }
+      
+        .app-header h1 {
+          font-size: 18px;
+        }
+      
+        .stats-panel {
+          grid-template-columns: 1fr;
+        }
+      
+        .stat-card p {
+          font-size: 18px;
+        }
+      
+        input,
+        select,
+        textarea,
+        button {
+          font-size: 14px;
+        }
+      
+        .mufradat-card h2 {
+          font-size: 18px;
+        }
+      
+        .card-actions {
+          flex-direction: column;
+        }
+      }
+      
+      /* ===== SMALL DEVICES (481px - 768px) ===== */
+      @media (min-width: 481px) and (max-width: 768px) {
+      
+        .stats-panel {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      
+        .control-panel {
+          grid-template-columns: 1fr;
+        }
+      
+        .mufradat-card h2 {
+          font-size: 20px;
+        }
+      }
+      
+      /* ===== TABLET / MEDIUM DEVICES (769px - 1024px) ===== */
+      @media (min-width: 769px) and (max-width: 1024px) {
+      
+        .stats-panel {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      
+        .control-panel {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      
+        #mufradatList {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      /* ===== LARGE DEVICES (1025px - 1440px) ===== */
+      @media (min-width: 1025px) {
+      
+        .stats-panel {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      
+        .control-panel {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      
+        #mufradatList {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      
+      /* ===== ULTRA WIDE (≥ 1600px) ===== */
+      @media (min-width: 1600px) {
+      
+        #mufradatList {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      
+        body {
+          max-width: 1500px;
+          margin: auto;
+        }
+      }
+      
+      /* ===== TOUCH OPTIMIZATION ===== */
+      @media (hover: none) and (pointer: coarse) {
+      
+        button {
+          padding: 14px;
+        }
+      
+        .card-actions button {
+          font-size: 14px;
+        }
+      }
+      
+      /* ===== LANDSCAPE FIX (HP Horizontal) ===== */
+      @media (max-height: 500px) and (orientation: landscape) {
+      
+        body {
+          padding: 10px;
+        }
+      
+        .stats-panel {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      
+      }
+      
+    }
+  }
+  
+  /* ===== LARGE SCREEN ===== */
+  @media (min-width: 1400px) {
+  
+    body {
+      max-width: 1200px;
+      margin: auto;
+    }
+  
+    .stats-panel {
+      gap: 20px;
+    }
+  
+    .mufradat-card {
+      padding: 20px;
+    }
+  }
+  
