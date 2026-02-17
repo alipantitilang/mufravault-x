@@ -2,28 +2,26 @@
 // ===== SERVICE WORKER =====
 // ===============================
 
-const CACHE_NAME = "mufravault-x-v3";
+const CACHE_NAME = "mufravault-x-v4";
 
 const ASSETS_TO_CACHE = [
   "/",
-  "index.html",
-  "manifest.json",
+  "/index.html",
+  "/css/main.css",
+  "/css/responsive.css",
 
-  "css/main.css",
-  "css/responsive.css",
+  "/js/data.js",
+  "/js/form.js",
+  "/js/search.js",
+  "/js/sort.js",
+  "/js/stats.js",
+  "/js/theme.js",
+  "/js/app.js",
+  "/js/router.js",
 
-  "js/router.js",
-  "js/data.js",
-  "js/form.js",
-  "js/search.js",
-  "js/sort.js",
-  "js/stats.js",
-  "js/theme.js",
-  "js/app.js",
-
-  "icons/icon-192.png",
-  "icons/icon-512.png"
+  "/manifest.json"
 ];
+
 
 // ===== INSTALL =====
 self.addEventListener("install", event => {
