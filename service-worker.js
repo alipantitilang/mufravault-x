@@ -2,26 +2,25 @@
 // ===== SERVICE WORKER =====
 // ===============================
 
-const CACHE_NAME = "mufravault-x-v4";
+const CACHE_NAME = "mufravault-x-v5";
 
 const ASSETS_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/css/main.css",
-  "/css/responsive.css",
+  "./",
+  "./index.html",
+  "./css/main.css",
+  "./css/responsive.css",
 
-  "/js/data.js",
-  "/js/form.js",
-  "/js/search.js",
-  "/js/sort.js",
-  "/js/stats.js",
-  "/js/theme.js",
-  "/js/app.js",
-  "/js/router.js",
+  "./js/data.js",
+  "./js/form.js",
+  "./js/search.js",
+  "./js/sort.js",
+  "./js/stats.js",
+  "./js/theme.js",
+  "./js/app.js",
+  "./js/router.js",
 
-  "/manifest.json"
+  "./manifest.json"
 ];
-
 
 // ===== INSTALL =====
 self.addEventListener("install", event => {
@@ -36,15 +35,15 @@ self.addEventListener("install", event => {
 // ===== ACTIVATE =====
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(
+    caches.keys().then(keys =>
+      Promise.all(
         keys.map(key => {
           if (key !== CACHE_NAME) {
             return caches.delete(key);
           }
         })
-      );
-    })
+      )
+    )
   );
   self.clients.claim();
 });
@@ -54,6 +53,6 @@ self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => {
       return response || fetch(event.request);
-    })
+    }).catch(() => caches.match("./index.html"))
   );
 });
