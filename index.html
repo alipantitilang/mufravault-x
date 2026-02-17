@@ -15,6 +15,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+
+  
 </head>
 
 <body>
@@ -24,6 +26,11 @@
     <h1> MufraVault X</h1>
     <button id="themeToggle">🌙</button>
   </header>
+
+  <div class="tab-navigation">
+    <button data-tab="addSection" class="active-tab">Tambah</button>
+    <button data-tab="searchSection">Cari</button>
+  </div>  
 
   <!-- ===== STATS PANEL ===== -->
   <section class="stats-panel">
@@ -48,7 +55,7 @@
   </section>
 
   <!-- ===== FORM INPUT ===== -->
-  <section class="form-section">
+  <section class="form-section tab-section" id="addSection">
     <h2>Tambah / Edit Mufradat</h2>
 
     <form id="mufradatForm">
@@ -78,28 +85,55 @@
   </section>
 
   <!-- ===== SEARCH & FILTER ===== -->
-  <section class="control-panel">
+  <section class="control-panel tab-section active" id="searchSection">
 
-    <input type="text" id="searchInput" placeholder="Cari kata..." />
-
-    <select id="filterCategory">
-      <option value="all">Semua Kategori</option>
-      <option value="Isim">Isim</option>
-      <option value="Fi'il">Fi'il</option>
-      <option value="Huruf">Huruf</option>
-    </select>
-
-    <select id="sortOption">
-      <option value="newest">Terbaru</option>
-      <option value="az">A-Z</option>
-      <option value="level">Level</option>
-    </select>
-
-    <button id="exportBtn">Export</button>
-    <input type="file" id="importFile" hidden />
-    <button id="importBtn">Import</button>
-
+    <div class="filter-panel">
+  
+      <!-- SEARCH -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari mufradat..." />
+        
+  
+      <!-- FILTER ROW -->
+      <div class="filter-row">
+  
+        <div class="select-group">
+          <label>Kategori</label>
+          <select id="filterCategory">
+            <option value="all">Semua</option>
+            <option value="Isim">Isim</option>
+            <option value="Fi'il">Fi'il</option>
+            <option value="Huruf">Huruf</option>
+          </select>
+        </div>
+  
+        <div class="select-group">
+          <label>Urutkan</label>
+          <select id="sortOption">
+            <option value="newest">Terbaru</option>
+            <option value="az">A-Z</option>
+            <option value="level">Level</option>
+          </select>
+        </div>
+  
+      </div>
+  
+      <!-- EXPORT IMPORT -->
+      <div class="control-buttons">
+        <button id="exportBtn" class="btn-export">
+          ⬇ Export
+        </button>
+  
+        <label for="importFile" class="btn-import">
+          ⬆ Import
+        </label>
+        <input type="file" id="importFile" accept=".json" hidden>
+      </div>
+  
+    </div>
+  
   </section>
+  
 
   <!-- ===== LIST DISPLAY ===== -->
   <section class="list-section">
@@ -119,6 +153,8 @@
   <script src="js/stats.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/router.js"></script>
+  
   
   <script>
     if ("serviceWorker" in navigator) {

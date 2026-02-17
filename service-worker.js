@@ -2,7 +2,7 @@
 // ===== SERVICE WORKER =====
 // ===============================
 
-const CACHE_NAME = "mufravault-x-v1";
+const CACHE_NAME = "mufravault-x-v2";
 
 const ASSETS_TO_CACHE = [
   "/",
@@ -12,6 +12,7 @@ const ASSETS_TO_CACHE = [
   "css/main.css",
   "css/responsive.css",
 
+  "js/router.js",
   "js/data.js",
   "js/form.js",
   "js/search.js",
