@@ -2,7 +2,7 @@
 // ===== SERVICE WORKER =====
 // ===============================
 
-const CACHE_NAME = "mufravault-x-v2";
+const CACHE_NAME = "mufravault-x-v3";
 
 const ASSETS_TO_CACHE = [
   "/",
